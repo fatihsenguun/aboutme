@@ -18,8 +18,9 @@
             overflow-x: hidden;
             background-color: white;
         }
-        #giris{
-            background-color:#EDE4D9;
+
+        #giris {
+            background-color: #EDE4D9;
         }
 
 
@@ -172,7 +173,7 @@
 
         #contactbox {
 
-            width: 300px;
+            width: 500px;
             height: 100px;
             background-color: #EDE4D9;
             display: flex;
@@ -183,14 +184,17 @@
             margin: 0 auto;
         }
 
-        .col-6 i {
-            font-size: 450%;
-            display: flex;
-            justify-content: center;
-
-            align-items: center;
-
+        #contactbox i {
+            font-size: 500%;
+            display: inline-block;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
+
+        #contactbox i:hover {
+            transform: scale(1.15);
+            color: #0D1B2A;
+        }
+
 
         a {
             color: inherit;
@@ -214,8 +218,8 @@
             border: 10px solid;
             border-color: #EDE4D9;
         }
-       
-        #contactme p{
+
+        #contactme p {
             margin-top: 10%;
             margin-left: 20%;
             margin-right: 20%;
@@ -302,12 +306,23 @@
         <div class="row" id="contactboxdiv">
 
             <div class="row" id="contactbox">
-
-                <div class="col-6"> <a href="https://www.linkedin.com/in/fatih-salih-sengun-7976012b3/"
-                        target="_blank"><i class="fa-brands fa-linkedin"> </i></a></div>
-                <div class="col-6"><a href="https://wa.me/+905315975575" target="_blank"><i
-                            class="fa-brands fa-square-whatsapp"></i></a></div>
+                <div class="col-4 text-center">
+                    <a href="https://www.linkedin.com/in/fatih-salih-sengun-7976012b3/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="col-4 text-center">
+                    <a href="https://wa.me/+905315975575" target="_blank">
+                        <i class="fa-brands fa-square-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="col-4 text-center">
+                    <a href="https://github.com/fatihsenguun" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
             </div>
+
 
 
         </div>
@@ -320,7 +335,8 @@
                     <div id="contactme" class=" col-12 col-lg-6">
                         <h1 class="mt-4">Contact Me</h1>
                         <p> <i class="fa-solid fa-phone"></i> Tel: +905315975575</p>
-                        <p><i class="fa-solid fa-envelope"></i><a href="mailto:fatihsenguun@gmail.com" target="_blank"> Mail: fatihsenguun@gmail.com</a></p>
+                        <p><i class="fa-solid fa-envelope"></i><a href="mailto:fatihsenguun@gmail.com" target="_blank">
+                                Mail: fatihsenguun@gmail.com</a></p>
                     </div>
                     <div class="col-lg-3"></div>
                 </div>
