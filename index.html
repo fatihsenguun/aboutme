@@ -203,6 +203,43 @@
 
     <script>
         if (history.scrollRestoration) history.scrollRestoration = 'manual';
+
+        // 1. KARTLARA TIKLAMA (ACTIVE CLASS EKLEME)
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Eğer telefona tıklanmışsa kartın click eventini tetikleme
+                if(e.target.closest('.mockup-phone-mini')) return;
+                
+                card.classList.toggle('active');
+            });
+        });
+
+        // 2. TELEFONLARA TIKLAMA (MOBİL UYUMLU SEÇİM)
+        const phones = document.querySelectorAll('.mockup-phone-mini');
+
+        phones.forEach(phone => {
+            phone.addEventListener('click', (e) => {
+                // Bu tıklamanın Body'ye gitmesini engelle (yoksa hemen kapanır)
+                e.stopPropagation();
+
+                // Şu an tıklanan zaten aktif mi kontrol et
+                const isActive = phone.classList.contains('active');
+
+                // Önce tüm telefonları resetle (kapat)
+                phones.forEach(p => p.classList.remove('active'));
+
+                // Eğer önceden aktif değildiyse, şimdi aktif yap
+                if (!isActive) {
+                    phone.classList.add('active');
+                }
+            });
+        });
+
+        // 3. BOŞLUĞA TIKLAYINCA TELEFONLARI ESKİ HALİNE GETİR
+        document.addEventListener('click', () => {
+            phones.forEach(p => p.classList.remove('active'));
+        });
     </script>
 </body>
 </html>
