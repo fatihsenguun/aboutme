@@ -3,183 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatih Salih Sengun | Full Stack Developer</title>
+    <title>Fatih Salih Sengun | Full Stack Engineer</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="ambient-light light-1"></div>
-    <div class="ambient-light light-2"></div>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
 
     <nav class="navbar">
         <div class="logo">Fatih Salih Sengun</div>
         <div class="nav-links">
             <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
-            <a href="#contact" class="btn-contact">Contact Me</a>
+            <a href="#contact" class="btn-cta">Contact Me</a>
         </div>
     </nav>
 
-    <section class="hero-section">
-        <div class="profile-glow-container">
-            <div class="glowing-circle"></div>
-            <img src="profile.png" alt="Fatih Salih Sengun" class="profile-img">
+    <section class="hero">
+        <div class="profile-container">
+            <div class="profile-ring"></div>
+            <img src="assets/profile.png" alt="Fatih Salih Sengun" class="profile-img">
         </div>
 
-        <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">Fatih</span>.
-        </h1>
-        <h2 class="hero-subtitle">
-            Full Stack Developer
-        </h2>
+        <h1>Hi, I'm <span class="gradient-text">Fatih</span>.</h1>
+        <h2 class="hero-subtitle">Full Stack Developer</h2>
+        
         <p class="hero-desc">
-            Software Engineer Intern at Kedy.AI. I build robust backend architectures with Java Spring and create scalable web & mobile ecosystems using React and React Native. Passionate about creating efficient, user-centered software solutions.
+            Software Engineer Intern at Kedy.AI. I build robust backend architectures with 
+            <span class="highlight">Java Spring</span> and create scalable web & mobile ecosystems using 
+            <span class="highlight">React</span> and <span class="highlight">React Native</span>.
+            Passionate about creating efficient, user-centered software solutions.
         </p>
 
-        <div class="tech-badges">
-            <span><i class="fa-brands fa-java"></i> Java Spring</span>
-            <span><i class="fa-brands fa-react"></i> React Native</span>
-            <span><i class="fa-brands fa-react"></i> React.js</span>
-            <span><i class="fa-brands fa-node"></i> Node.js</span>
-            <span><i class="fa-brands fa-docker"></i> Docker</span>
-            <span><i class="fa-solid fa-code"></i> TypeScript</span>
-            <span><i class="fa-solid fa-database"></i> PostgreSQL</span>
+        <div class="tech-stack">
+            <div class="tech-pill"><i class="fa-brands fa-java"></i> Java Spring</div>
+            <div class="tech-pill"><i class="fa-brands fa-react"></i> React Native</div>
+            <div class="tech-pill"><i class="fa-brands fa-react"></i> React.js</div>
+            <div class="tech-pill"><i class="fa-brands fa-node"></i> Node.js</div>
+            <div class="tech-pill"><i class="fa-brands fa-docker"></i> Docker</div>
+            <div class="tech-pill"><i class="fa-solid fa-database"></i> PostgreSQL</div>
         </div>
     </section>
 
-    <section id="projects" class="section-container">
-        <div class="section-header">
+    <section id="projects" class="projects-section">
+        <div class="section-title">
             <h3>Selected Projects</h3>
             <p>Technical solutions engineered for real-world problems.</p>
         </div>
 
-        <div class="project-row">
-            <div class="project-info">
-                <span class="project-tag">Full Stack AI Ecosystem</span>
-                <h4>Gallerist AI System</h4>
-                <p>
-                    Architected a complete vehicle management ecosystem powered by AI. The backend, built with <strong>Java Spring Boot</strong>, integrates a RAG-based "Virtual Consultant" using <strong>Spring AI</strong> and <strong>Llama 3</strong> to answer customer queries intelligently.
-                    The frontend, developed with <strong>React.js</strong>, provides a modern administrative dashboard featuring detailed financial analytics, inventory management, and secure Role-Based Access Control (RBAC) for admins and employees.
-                </p>
-                <div class="tech-stack-mini">
-                    <span>Spring Boot</span>
-                    <span>React.js</span>
-                    <span>PostgreSQL (Vector)</span>
-                    <span>Spring AI</span>
+        <div class="projects-stack">
+            
+            <div class="project-card">
+                <div class="card-content">
+                    <div class="tags">
+                        <span>Spring Boot</span>
+                        <span>Spring AI</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <h4>Gallerist AI System</h4>
+                    <p>
+                        Architected a complete vehicle management ecosystem powered by AI. The backend, built with <strong>Java Spring Boot</strong>, integrates a RAG-based "Virtual Consultant" using <strong>Spring AI</strong> and <strong>Llama 3</strong>.
+                        Features include financial analytics, inventory management, and RBAC.
+                    </p>
+                    <div class="links">
+                        <a href="https://github.com/fatihsenguun/springbootgallerist" target="_blank">Backend Repo <i class="fa-solid fa-server"></i></a>
+                        <a href="https://github.com/fatihsenguun/reactgallerist" target="_blank">Frontend Repo <i class="fa-brands fa-react"></i></a>
+                    </div>
                 </div>
-                <div class="links" style="gap: 10px; display: flex;">
-                    <a href="https://github.com/fatihsenguun/springbootgallerist" target="_blank">Backend Repo <i class="fa-solid fa-server"></i></a>
-                    <a href="https://github.com/fatihsenguun/reactgallerist" target="_blank">Frontend Repo <i class="fa-brands fa-react"></i></a>
-                </div>
-            </div>
-            <div class="project-visual aesthetic-1">
-                <i class="fa-solid fa-car-side icon-bg"></i>
-            </div>
-        </div>
-        <div class="project-row reverse">
-            <div class="project-info">
-                <span class="project-tag">Mobile Ecosystem</span>
-                <h4>keyInn Hotel App</h4>
-                <p>
-                    Developed a cross-platform hospitality ecosystem featuring a <strong>SwiftUI</strong> (iOS) mobile app for QR-based digital room access and a <strong>React.js</strong> web dashboard for management.
-                    Orchestrated real-time data synchronization between the mobile app and admin panel using <strong>Firebase Firestore</strong>, ensuring a seamless check-in experience and robust user authentication.
-                </p>
-                <div class="tech-stack-mini">
-                    <span>SwiftUI</span>
-                    <span>React.js</span>
-                    <span>Firebase Auth</span>
-                    <span>Real-time DB</span>
-                </div>
-                <div class="links">
-                    <a href="https://github.com/fatihsenguun/swiftuihotelproject" target="_blank">View Code <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="card-visual">
+                    <div class="mockup-laptop">
+                        <div class="screen">
+                            <div class="screen-content" style="background-image: url('./assets/dashboard.png');"></div>
+                        </div>
+                        <div class="base"></div>
+                    </div>
                 </div>
             </div>
-            <div class="project-visual aesthetic-2">
-                <i class="fa-solid fa-hotel icon-bg"></i>
-            </div>
-        </div>
 
-         <div class="project-row">
-            <div class="project-info">
-                <span class="project-tag">Full Stack Web</span>
-                <h4>AI Text & PDF Summarizer</h4>
-                <p>
-                    Built a Full-Stack application capable of analyzing long-form text and PDF documents. 
-                    Integrated <strong>Hugging Face (GPT-OSS)</strong> models via a <strong>Node.js (Express)</strong> backend to generate automated summaries and extract key questions.
-                    Designed RESTful APIs to handle asynchronous file uploads and processing efficiently, with a type-safe <strong>React (TypeScript)</strong> frontend.
-                </p>
-                <div class="tech-stack-mini">
-                    <span>Node.js</span>
-                    <span>TypeScript</span>
-                    <span>React</span>
-                    <span>Hugging Face</span>
+            <div class="project-card mobile-project">
+                <div class="card-content">
+                    <div class="tags">
+                        <span>SwiftUI</span>
+                        <span>React.js</span>
+                        <span>Firebase</span>
+                    </div>
+                    <h4>keyInn Hotel App</h4>
+                    <p>
+                        Developed a cross-platform hospitality ecosystem featuring a <strong>SwiftUI</strong> (iOS) mobile app for QR-based digital room access and a <strong>React.js</strong> web dashboard for management.
+                        Orchestrated real-time data synchronization.
+                    </p>
+                    <div class="links">
+                        <a href="https://github.com/fatihsenguun/swiftuihotelproject" target="_blank">View Code <i class="fa-brands fa-github"></i></a>
+                    </div>
                 </div>
-                <div class="links">
-                    <a href="https://github.com/fatihsenguun/ai-textpdf-summarizer" target="_blank">View Code <i class="fa-solid fa-arrow-right"></i></a>
+                
+                <div class="card-visual phone-visual">
+                    <div class="phone-group">
+                        <div class="mockup-phone-mini">
+                            <div class="phone-screen" style="background-image: url('./assets/login.png');"></div>
+                        </div>
+                        <div class="mockup-phone-mini">
+                            <div class="phone-screen" style="background-image: url('./assets/profilep.png');"></div>
+                        </div>
+                        <div class="mockup-phone-mini center-phone">
+                            <div class="phone-screen" style="background-image: url('./assets/home-1.png');"></div>
+                        </div>
+                        <div class="mockup-phone-mini">
+                            <div class="phone-screen" style="background-image: url('./assets/selectHotels.png');"></div>
+                        </div>
+                        <div class="mockup-phone-mini">
+                            <div class="phone-screen" style="background-image: url('./assets/bookNow.png');"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="project-visual aesthetic-3">
-                <i class="fa-solid fa-file-pdf icon-bg"></i>
+
+            <div class="project-card">
+                <div class="card-content">
+                    <div class="tags">
+                        <span>Node.js</span>
+                        <span>TypeScript</span>
+                        <span>Hugging Face</span>
+                    </div>
+                    <h4>AI Text & PDF Summarizer</h4>
+                    <p>
+                        Built a Full-Stack application capable of analyzing long-form text/PDF. 
+                        Integrated <strong>Hugging Face (GPT-OSS)</strong> models via a <strong>Node.js</strong> backend. 
+                        Designed RESTful APIs with a type-safe <strong>React</strong> frontend.
+                    </p>
+                    <div class="links">
+                        <a href="https://github.com/fatihsenguun/ai-textpdf-summarizer" target="_blank">View Code <i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="card-visual">
+                    <div class="mockup-laptop">
+                        <div class="screen">
+                             <div class="screen-content" style="background-image: url('./assets/home.png');"></div>
+                        </div>
+                        <div class="base"></div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
 
-    <section id="experience" class="section-container">
-        <div class="section-header">
-            <h3>Professional Experience</h3>
-        </div>
-
-        <div class="timeline-clean">
+    <section id="experience" class="experience-section">
+        <h3>Professional Experience</h3>
+        <div class="timeline">
             <div class="timeline-item">
-                <div class="time">Nov 2025 - Present</div>
-                <div class="role">Software Engineer Intern</div>
-                <div class="company">Kedy.AI</div>
-                <p>
-                    Developing cross-platform mobile applications using <strong>React Native</strong> and responsive web interfaces with <strong>React.js</strong>. 
-                    Collaborating with the core team to integrate backend services and optimize video processing workflows for the AI-driven media platform.
-                </p>
+                <span class="date">Nov 2025 - Present</span>
+                <div class="content">
+                    <h4>Software Engineer Intern</h4>
+                    <span class="company">Kedy.AI</span>
+                    <p>
+                        Developing cross-platform mobile applications using <strong>React Native</strong> and responsive web interfaces with <strong>React.js</strong>. 
+                        Collaborating with the core team to integrate backend services and optimize video processing workflows for the AI-driven media platform.
+                    </p>
+                </div>
             </div>
             <div class="timeline-item">
-                <div class="time">Jan 2022 - Present</div>
-                <div class="role">Sales Consultant</div>
-                <div class="company">LC Waikiki (Part time)</div>
-                <p>Managing customer relations and store operations in a fast-paced environment, demonstrating strong communication and problem-solving skills.</p>
+                <span class="date">Jan 2022 - Present</span>
+                <div class="content">
+                    <h4>Sales Consultant</h4>
+                    <span class="company">LC Waikiki (Part time)</span>
+                    <p>
+                        Managing customer relations and store operations in a fast-paced environment, demonstrating strong communication and problem-solving skills.
+                    </p>
+                </div>
             </div>
             <div class="timeline-item">
-                <div class="time">2023 - 2027 (Expected)</div>
-                <div class="role">Bachelor's Degree</div>
-                <div class="company">Nisantasi University, Software Engineering</div>
-                <p>Focusing on Full Stack Development, Data Structures, and Artificial Intelligence concepts.</p>
+                <span class="date">2023 - 2027 (Expected)</span>
+                <div class="content">
+                    <h4>Bachelor's Degree</h4>
+                    <span class="company">Nisantasi University, Software Engineering</span>
+                    <p>
+                        Focusing on Full Stack Development, Data Structures, and Artificial Intelligence concepts.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
         <h2>Let's work together.</h2>
-        <p>fatihsenguun@gmail.com</p>
-        <div class="footer-socials">
+        <a href="mailto:fatihsenguun@gmail.com" class="email-link">fatihsenguun@gmail.com</a>
+        <div class="socials">
             <a href="https://github.com/fatihsenguun" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/fatih-salih-sengun-7976012b3" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         </div>
-        <div class="copyright">© 2026 Fatih Salih Sengun</div>
+        <p class="copyright">© 2026 Fatih Salih Sengun</p>
     </footer>
 
     <script>
-        if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual';
-        } else {
-            window.onbeforeunload = function () {
-                window.scrollTo(0, 0);
-            }
-        }
-        window.onload = function() {
-            window.scrollTo(0, 0);
-        }
+        if (history.scrollRestoration) history.scrollRestoration = 'manual';
     </script>
-
 </body>
 </html>
