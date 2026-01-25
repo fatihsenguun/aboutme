@@ -62,6 +62,34 @@
             <div class="project-card">
                 <div class="card-content">
                     <div class="tags">
+                        <span>Spring Boot 3</span>
+                        <span>Redis</span>
+                        <span>Apache Kafka</span>
+                        <span>Docker</span>
+                    </div>
+                    <h4>TradeFlow - Scalable E-Commerce API</h4>
+                    <p>
+                        Developed a high-performance **Event-Driven** backend architecture. 
+                        Implemented <strong>Redis</strong> for distributed caching to optimize response times and <strong>Apache Kafka</strong> for asynchronous mail notification services. 
+                        Engineered a robust <strong>Dashboard API</strong> with financial snapshot logic to ensure long-term data integrity.
+                    </p>
+                    <div class="links">
+                        <a href="https://github.com/fatihsenguun/tradeflow" target="_blank">View Code <i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="card-visual">
+                    <div class="mockup-laptop">
+                        <div class="screen">
+                            <div class="screen-content" style="background-image: url('./assets/dashboard-2.png');"></div>
+                        </div>
+                        <div class="base"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="card-content">
+                    <div class="tags">
                         <span>Spring Boot</span>
                         <span>Spring AI</span>
                         <span>PostgreSQL</span>
@@ -204,39 +232,26 @@
     <script>
         if (history.scrollRestoration) history.scrollRestoration = 'manual';
 
-        // 1. KARTLARA TIKLAMA (ACTIVE CLASS EKLEME)
         const cards = document.querySelectorAll('.project-card');
         cards.forEach(card => {
             card.addEventListener('click', (e) => {
-                // Eğer telefona tıklanmışsa kartın click eventini tetikleme
                 if(e.target.closest('.mockup-phone-mini')) return;
-                
                 card.classList.toggle('active');
             });
         });
 
-        // 2. TELEFONLARA TIKLAMA (MOBİL UYUMLU SEÇİM)
         const phones = document.querySelectorAll('.mockup-phone-mini');
-
         phones.forEach(phone => {
             phone.addEventListener('click', (e) => {
-                // Bu tıklamanın Body'ye gitmesini engelle (yoksa hemen kapanır)
                 e.stopPropagation();
-
-                // Şu an tıklanan zaten aktif mi kontrol et
                 const isActive = phone.classList.contains('active');
-
-                // Önce tüm telefonları resetle (kapat)
                 phones.forEach(p => p.classList.remove('active'));
-
-                // Eğer önceden aktif değildiyse, şimdi aktif yap
                 if (!isActive) {
                     phone.classList.add('active');
                 }
             });
         });
 
-        // 3. BOŞLUĞA TIKLAYINCA TELEFONLARI ESKİ HALİNE GETİR
         document.addEventListener('click', () => {
             phones.forEach(p => p.classList.remove('active'));
         });
