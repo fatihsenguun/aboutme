@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* style.css'ten gelen tüm animasyon ve perspektifleri zorla kapat */
+
         .project-card, .project-card:hover, .project-card.active,
         .mockup-laptop, .mockup-laptop:hover, .screen, .screen:hover, .card-visual, .card-visual:hover {
             transform: none !important;
@@ -22,11 +22,11 @@
             cursor: default !important;
         }
 
-        /* Kart tıklamalarını pasif yapıp sadece butonların tıklanmasını sağla */
+
         .project-card { pointer-events: none; }
         .project-card .card-content, .project-card .card-visual { pointer-events: auto; }
 
-        /* Laptop ekranlarını düz resim çerçevesine çevir */
+
         .mockup-laptop .screen {
             border-radius: 8px !important;
             border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -34,7 +34,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
         }
 
-        /* --- GALERİ CSS --- */
+
         .phone-gallery-container {
             width: 100%;
             display: flex;
@@ -70,13 +70,11 @@
             transition: opacity 0.3s ease, transform 0.3s ease;
             scroll-snap-align: center;
             cursor: pointer;
-            opacity: 0.6;
-            transform: scale(0.9) !important; 
+            opacity: 1 !important; 
+            transform: none !important; 
         }
         
         .gallery-image.active {
-            opacity: 1;
-            transform: scale(1.05) !important; 
             z-index: 10;
         }
 
@@ -172,7 +170,7 @@
                         <div class="phone-gallery">
                             <img src="./assets/login1.png" alt="Login Screen" class="gallery-image">
                             <img src="./assets/shorts.png" alt="Shorts Screen" class="gallery-image">
-                            <img src="./assets/dashboard 1.png" alt="Dashboard Screen" class="gallery-image active">
+                            <img src="./assets/dashboard 1.png" alt="Dashboard Screen" class="gallery-image">
                             <img src="./assets/uplaod.png" alt="Upload Screen" class="gallery-image">
                             <img src="./assets/profile 1.png" alt="Profile Screen" class="gallery-image">
                         </div>
@@ -182,8 +180,41 @@
                     </div>
                 </div>
             </div>
-            
-           <div class="project-card">
+
+            <div class="project-card mobile-project">
+                <div class="card-content">
+                    <div class="tags">
+                        <span>Spring Boot</span>
+                        <span>Spring AI</span>
+                        <span>Gemini AI</span>
+                        <span>React Native Expo</span>
+                    </div>
+                    <h4>CoachAI - AI Personal Trainer</h4>
+                    <p>
+                        Engineered an intelligent, AI-driven fitness application that generates 100% personalized workout programs. By leveraging <strong>Gemini AI</strong> integrated through <strong>Spring AI</strong> on the backend, the system deeply analyzes the user's real-time physical condition, immediate context, and available equipment to dynamically craft the perfect training routine. The cross-platform mobile experience is delivered via a sleek <strong>React Native Expo</strong> frontend, ensuring a seamless and highly adaptive coaching experience.
+                    </p>
+                    <div class="links">
+                           <a href="https://github.com/fatihsenguun/reactnativecoachai" target="_blank">Mobile App <i class="fa-solid fa-mobile-screen"></i></a>
+                        <a href="https://github.com/fatihsenguun/springbootcoachai" target="_blank">Spring API <i class="fa-solid fa-server"></i></a>
+                    </div>
+                </div>
+                
+                <div class="card-visual phone-gallery-container">
+                    <div class="phone-gallery-wrapper">
+                        <div class="phone-gallery">
+                            <img src="./assets/login2.png" alt="Login Screen" class="gallery-image">
+                            <img src="./assets/dash2.png" alt="Dashboard Screen" class="gallery-image">
+                            <img src="./assets/plan.png" alt="Workout Plan Screen" class="gallery-image">
+                            <img src="./assets/workout.png" alt="Workout Screen" class="gallery-image">
+                            <img src="./assets/generate.png" alt="Generate Screen" class="gallery-image">
+                        </div>
+                    </div>
+                    <div class="swipe-hint">
+                        <i class="fa-solid fa-arrows-left-right"></i> Swipe to explore screens
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
                 <div class="card-content">
                     <div class="tags">
                         <span>Spring Boot 3</span>
@@ -260,7 +291,7 @@
                         <div class="phone-gallery">
                             <img src="./assets/login.png" alt="Login Screen" class="gallery-image">
                             <img src="./assets/profilep.png" alt="Profile Screen" class="gallery-image">
-                            <img src="./assets/home-1.png" alt="Home Screen" class="gallery-image active">
+                            <img src="./assets/home-1.png" alt="Home Screen" class="gallery-image">
                             <img src="./assets/selectHotels.png" alt="Hotels Screen" class="gallery-image">
                             <img src="./assets/bookNow.png" alt="Booking Screen" class="gallery-image">
                         </div>
@@ -346,34 +377,30 @@
     </footer>
 
     <script>
-        // Sayfa yenilendiğinde en üste kaymayı zorla
         if (history.scrollRestoration) history.scrollRestoration = 'manual';
         
         window.addEventListener('load', () => {
-            // Yüklendiği an en tepede başla
             window.scrollTo(0, 0);
 
-            // Dikey ekseni bozmadan sadece yatay galeriyi ortala
-            const activeImages = document.querySelectorAll('.gallery-image.active');
-            activeImages.forEach(img => {
-                const gallery = img.closest('.phone-gallery');
-                const centerPosition = img.offsetLeft - (gallery.offsetWidth / 2) + (img.offsetWidth / 2);
-                gallery.scrollLeft = centerPosition;
+
+            const galleries = document.querySelectorAll('.phone-gallery');
+            galleries.forEach(gallery => {
+                const images = gallery.querySelectorAll('.gallery-image');
+                if(images.length > 2) {
+
+                    const centerImg = images[2]; 
+                    const centerPosition = centerImg.offsetLeft - (gallery.offsetWidth / 2) + (centerImg.offsetWidth / 2);
+                    gallery.scrollLeft = centerPosition;
+                }
             });
         });
 
+
         const galleryImages = document.querySelectorAll('.gallery-image');
-        
         galleryImages.forEach(img => {
             img.addEventListener('click', (e) => {
                 e.stopPropagation();
-                
                 const gallery = img.closest('.phone-gallery');
-                gallery.querySelectorAll('.gallery-image').forEach(p => p.classList.remove('active'));
-                
-                img.classList.add('active');
-                
-                // Tıklandığında sayfayı aşağı/yukarı sarsmadan sadece yatayda merkeze al
                 const centerPosition = img.offsetLeft - (gallery.offsetWidth / 2) + (img.offsetWidth / 2);
                 gallery.scrollTo({ left: centerPosition, behavior: 'smooth' });
             });

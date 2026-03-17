@@ -71,7 +71,6 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     padding: 8px 18px; border-radius: 100px; font-size: 0.85rem;
     display: flex; gap: 8px; align-items: center; color: #e2e8f0; transition: 0.3s;
 }
-.tech-pill:hover { border-color: var(--accent); background: rgba(99, 102, 241, 0.1); }
 
 .projects-section { padding: 4rem 8%; max-width: 1200px; margin: 0 auto; }
 .section-title { margin-bottom: 5rem; text-align: center; }
@@ -93,12 +92,6 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     display: flex; 
     flex-direction: row;
     min-height: 480px; 
-    transition: transform 0.4s ease, border-color 0.4s ease;
-}
-
-.project-card:hover, .project-card.active {
-    border-color: rgba(99, 102, 241, 0.4);
-    transform: translateY(-5px);
 }
 
 .card-content {
@@ -122,7 +115,6 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     flex: 1.2;
     background: radial-gradient(circle at center, #1c1c21 0%, #0e0e11 100%);
     display: flex; align-items: center; justify-content: center;
-    perspective: 1200px;
     overflow: hidden; 
     position: relative;
 }
@@ -130,126 +122,77 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 .mockup-laptop {
     width: 90%;
     max-width: 480px;
-    transform-style: preserve-3d;
-    transform: rotateX(10deg) rotateY(-15deg) rotateZ(2deg);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.project-card:hover .mockup-laptop, .project-card.active .mockup-laptop {
-    transform: rotateX(0deg) rotateY(0deg) scale(1.02);
 }
 
 .mockup-laptop .screen {
-    background: #000; border-radius: 12px 12px 0 0;
-    padding: 6px 6px 0 6px; border: 1px solid #333; position: relative;
+    background: #000; border-radius: 12px;
+    padding: 6px; border: 1px solid #333; position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
+
 .mockup-laptop .screen-content {
-    height: 250px; background: #111; border-radius: 6px 6px 0 0;
+    height: 250px; background: #111; border-radius: 6px;
     position: relative; overflow: hidden;
     background-size: 100% 100% !important;
     background-position: center center !important;
-    filter: brightness(0.8) blur(0.5px);
-    transition: 0.6s;
 }
 
-.project-card:hover .screen-content, .project-card.active .screen-content { 
-    filter: brightness(1.1) blur(0); 
+/* --- YENİ TELEFON GALERİSİ CSS (Hover'sız ve Net) --- */
+.phone-gallery-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.mockup-laptop .base {
-    height: 14px; background: #1a1a1a; border-radius: 0 0 12px 12px; margin-top: -1px;
-    border-top: 1px solid #333; position: relative;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-}
-.mockup-laptop .base::before {
-    content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-    width: 35%; height: 6px; background: #2a2a2a; border-radius: 0 0 4px 4px;
-}
-
-.phone-visual {
+.phone-gallery-wrapper {
+    width: 100%;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 3rem 0;
-    overflow: visible;
 }
 
-.phone-group {
+.phone-gallery {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-    position: relative;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 20px 10px;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
     width: 100%;
 }
 
-.mockup-phone-mini {
-    width: 100px;
-    height: 200px;
-    background: #000;
+.phone-gallery::-webkit-scrollbar { display: none; }
+
+.gallery-image {
+    height: 380px; 
     border-radius: 18px;
-    border: 3px solid #333;
-    position: relative;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    flex-shrink: 0;
+    object-fit: contain;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    scroll-snap-align: center;
     cursor: pointer;
+    opacity: 1; 
+    transform: none; 
 }
 
-.mockup-phone-mini:nth-child(1) {
-    transform: perspective(800px) rotateY(25deg) scale(0.9);
-    z-index: 1;
-    margin-right: -30px;
+.swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #8892b0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 5px;
+    animation: pulseHint 2s infinite;
 }
 
-.mockup-phone-mini:nth-child(2) {
-    transform: perspective(800px) rotateY(15deg) scale(0.95) translateY(-10px);
-    z-index: 2;
-    margin-right: -30px;
-}
-
-.mockup-phone-mini:nth-child(3) {
-    transform: perspective(800px) rotateY(0deg) scale(1) translateY(-20px);
-    z-index: 3;
-    margin-right: -30px;
-    margin-left: -30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-}
-
-.mockup-phone-mini:nth-child(4) {
-    transform: perspective(800px) rotateY(-15deg) scale(0.95) translateY(-10px);
-    z-index: 2;
-    margin-left: -30px;
-}
-
-.mockup-phone-mini:nth-child(5) {
-    transform: perspective(800px) rotateY(-25deg) scale(0.9);
-    z-index: 1;
-    margin-left: -30px;
-}
-
-/* HEM HOVER HEM ACTIVE SINIFI İÇİN KURAL */
-.mockup-phone-mini:hover, 
-.mockup-phone-mini.active {
-    transform: perspective(800px) rotateY(0deg) scale(1.15) translateY(0) !important;
-    z-index: 100 !important;
-    box-shadow: 0 30px 60px rgba(99, 102, 241, 0.3);
-    border-color: #555;
-    margin-right: 15px; 
-    margin-left: 15px;
-}
-
-.mockup-phone-mini .phone-screen {
-    width: 100%; height: 100%; border-radius: 14px; overflow: hidden; background: #111;
-    background-size: cover !important; background-position: center !important;
-    filter: brightness(0.6);
-    transition: 0.4s;
-}
-
-/* EKRAN PARLAKLIĞI İÇİN DE HEM HOVER HEM ACTIVE */
-.mockup-phone-mini:hover .phone-screen,
-.mockup-phone-mini.active .phone-screen { 
-    filter: brightness(1.1); 
+@keyframes pulseHint {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
 }
 
 .experience-section { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
@@ -288,22 +231,10 @@ footer h2 { font-size: 2rem; margin-bottom: 1rem; }
     .card-content { padding: 2rem; }
     .card-visual { padding: 3rem 1rem; min-height: 300px; }
 
-    .mockup-laptop {
-        max-width: 320px; 
-        width: 100%;
-    }
-    .mockup-laptop .screen-content {
-        height: 180px;
-    }
+    .mockup-laptop { max-width: 320px; width: 100%; }
+    .mockup-laptop .screen-content { height: 180px; }
 
-    .phone-group { transform: scale(0.7); gap: 10px; }
-    .mockup-phone-mini { width: 80px; height: 160px; }
-    
-    .mockup-phone-mini:nth-child(1), .mockup-phone-mini:nth-child(2),
-    .mockup-phone-mini:nth-child(3), .mockup-phone-mini:nth-child(4), 
-    .mockup-phone-mini:nth-child(5) {
-        margin-right: -15px; margin-left: -15px;
-    }
+    .gallery-image { height: 320px; }
 
     .timeline-item { flex-direction: column; gap: 0.5rem; }
     .timeline-item::before { left: 0; top: 2rem; }
